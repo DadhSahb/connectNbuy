@@ -7,6 +7,8 @@ export default function ItemsCategory() {
   const [category, setCategory] = useState("All");
   // const [items, setItems] = useState([]);
   //   const [allItems, setAllItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageCount = 10;
 
   const currentDate = new Date().toLocaleDateString();
   const currentTime = new Date().toLocaleTimeString();
@@ -72,7 +74,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 7,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -82,7 +84,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 8,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -92,7 +94,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 9,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -102,7 +104,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 10,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -112,7 +114,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 11,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -122,7 +124,7 @@ export default function ItemsCategory() {
       currentDate: currentDate,
     },
     {
-      id: 6,
+      id: 12,
       imageURL:
         "https://silkavenue.pk/wp-content/uploads/2019/06/AG00712_Nude__1_.jpg",
       title: "Bag",
@@ -133,6 +135,9 @@ export default function ItemsCategory() {
     },
   ];
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div className={styles.Main}>
       <div className={styles.category}>
@@ -234,7 +239,12 @@ export default function ItemsCategory() {
             );
           })}
       </div>
-      <Pagination />
+      <Pagination
+        items={allItems.length}
+        currentPage={currentPage}
+        pageCount={pageCount}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
