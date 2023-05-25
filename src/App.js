@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/userDashboard/Navbar";
-import Buy from "./components/userDashboard/Buy";
-import Buyitem from "./components/userDashboard/Buyitem";
-import Buyedit from "./components/userDashboard/Buyedit";
-import Account from "./components/userDashboard/Profile";
+import Navbar from "./components/layout/Navbar";
+import Buy from "./components/pages/userDashboard/Buy";
+import Buyitem from "./components/pages/Buyitem";
+import Buyedit from "./components/pages/Buyedit";
+import Account from "./components/pages/userDashboard/Profile";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Missing from "./components/userDashboard/Missing";
-import Unautorized from "./components/userDashboard/Unautorized";
-import Messenger from "./components/userDashboard/Chat";
-import Home from "./components/userDashboard/Home";
-import Sidebar from "./components/userDashboard/sidebar";
+import Missing from "./components/utils/Missing";
+import Unautorized from "./components/utils/Unautorized";
+import Messenger from "./components/pages/userDashboard/Chat";
+import Home from "./components/pages/userDashboard/Home";
+import Sidebar from "./components/layout/sidebar";
 
 const notify = () => {
   toast("Welcome!");

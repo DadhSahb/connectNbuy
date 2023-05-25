@@ -1,6 +1,7 @@
 import { Typography, TextField } from "@mui/material";
 import React from "react";
-import styles from "./Profile.module.css";
+import styles from "../../../assests/styles/Profile.module.css";
+import Categories from "./categories";
 export default function Buy() {
   return (
     <div className={styles.Main}>
@@ -27,8 +28,8 @@ export default function Buy() {
             </div>
           </div>
         </div>
-
         <div className={styles.formmm}>
+          <Categories />
           <h1>Buy Request</h1>
           <form
             // ref={formRef}

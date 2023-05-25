@@ -1,7 +1,11 @@
 import { Typography, TextField } from "@mui/material";
-import React from "react";
-import styles from "./Profile.module.css";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+
+import React, { useState } from "react";
+import styles from "../../../assests/styles/Profile.module.css";
 export default function Account() {
+  const [category, setCategory] = useState("All");
+
   return (
     <div className={styles.Main}>
       <div className={styles.abc}>
@@ -41,6 +45,7 @@ export default function Account() {
             }}
             className={styles.formContainer}
           >
+         
             <TextField
               className={styles.input}
               id="standard-helperText"

@@ -1,12 +1,11 @@
-import "./navbar.css";
+import "../../assests/styles/navbar.css";
 // import image from "./../../Assets/undraw_icons_wdp4.svg";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import ArtTrackIcon from "@mui/icons-material/ArtTrack";
-import logo from "../../assests/logo.png";
+import logo from "../../assests/images/logo.png";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
