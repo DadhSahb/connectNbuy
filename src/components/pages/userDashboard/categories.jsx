@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "../../../assests/styles/UserDashboard.module.css";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import Search from "./search";
+import Search from "./LocationSearch";
+import itemsSearch from "./itemsSearch";
 
 export default function Categories({ category, setCategory }) {
   return (
@@ -34,6 +35,8 @@ export default function Categories({ category, setCategory }) {
           <option value="Kids">Kids</option>
         </select>
       </div>
+      <itemsSearch />
+      <Search />
     </div>
   );
 }

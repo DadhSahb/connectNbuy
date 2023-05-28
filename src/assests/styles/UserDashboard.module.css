@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f0f2f5;
 }
 
 .jobitemlist {
@@ -21,7 +22,7 @@
 .cardHolder {
   display: flex;
   margin-top: -62px;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
@@ -258,7 +259,15 @@
 
 @media only screen and (max-width: 764px) {
   .Main {
-    margin: 20px 15px;
+    background-color: #f0f2f5;
+  }
+  .category select {
+    font-size: 0.6rem;
+    background-color: white;
+    border: 0.125rem solid #efefef;
+    outline: none;
+    padding: 10px;
+    border-radius: 0.5rem;
   }
 }
 

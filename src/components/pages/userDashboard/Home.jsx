@@ -3,8 +3,6 @@ import ItemsCategory from "./itemsCategory";
 import Pagination from "./pagination";
 import Categories from "./categories";
 import { getItems } from "../../../servies/fakeItems";
-import Search from "./search";
-
 function UserDashboard() {
   const [items, setItems] = useState(getItems());
   const [currentPage, setCurrentPage] = useState(1);
