@@ -227,6 +227,7 @@
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
+  width: 70%;
 }
 
 /* ANIMATION */

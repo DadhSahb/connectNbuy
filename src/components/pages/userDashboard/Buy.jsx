@@ -29,7 +29,7 @@ export default function Buy() {
           </div>
         </div>
         <div className={styles.formmm}>
-          <Categories />
+          <Categories  />
           <h1>Buy Request</h1>
           <form
             // ref={formRef}

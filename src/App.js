@@ -11,6 +11,8 @@ import Unautorized from "./components/utils/Unautorized";
 import Messenger from "./components/pages/userDashboard/Chat";
 import Home from "./components/pages/userDashboard/Home";
 import Sidebar from "./components/layout/sidebar";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 
 const notify = () => {
   toast("Welcome!");
@@ -71,6 +73,8 @@ function App() {
               </Navbar>
             }
           />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
           <Route
             path="Chats"
             element={
