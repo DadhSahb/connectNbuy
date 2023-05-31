@@ -7,10 +7,7 @@ export default function Categories({ category, setCategory }) {
     <div className={styles.Main}>
       <div className={styles.category}>
         <FilterAltIcon style={{ fontSize: "30px" }} />
-        <select
-          defaultValue={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+        <select defaultValue={category} onChange={setCategory}>
           <option value="All">All</option>
           <option value="Accessories">Accessories</option>
           <option value="Property for Sale">Property for Sale</option>
@@ -34,7 +31,7 @@ export default function Categories({ category, setCategory }) {
         </select>
       </div>
       <itemsSearch />
-      <Search />
+      {/* <Search /> */}
     </div>
   );
 }

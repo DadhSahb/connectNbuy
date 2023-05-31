@@ -1,8 +1,43 @@
 import { Typography, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import styles from "../../../assests/styles/Profile.module.css";
 import Categories from "./categories";
+import { toast } from "react-toastify";
+
 export default function Buy() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const newItem = {
+        title,
+        description,
+        category,
+      };
+
+      const response = await axios.post("http://localhost:5000/item", newItem);
+      if (response.status === 200) {
+        toast.success("Item added Successfully");
+      }
+      console.log(response.data);
+
+      // Reset form fields after successful submission
+      setTitle("");
+      setDescription("");
+      setCategory("");
+    } catch (error) {
+      console.error(error);
+      if (error.response && error.response.status === 400) {
+        toast.error("Invalid Request");
+      }
+    }
+  };
+
   return (
     <div className={styles.Main}>
       <div className={styles.abc}>
@@ -10,17 +45,15 @@ export default function Buy() {
           {/* <img src={user.img} /> */}
           <div className={styles.userImg}>
             <img
-              src={
-                "http://www.clker.com/cliparts/f/a/0/c/1434020125875430376profile.png"
-              }
-            ></img>
+              src="http://www.clker.com/cliparts/f/a/0/c/1434020125875430376profile.png"
+              alt="User Profile"
+            />
             <div className={styles.imgText}>
-              <label for="files" class="btn33">
-                upload upto 5 images
+              <label htmlFor="files" className="btn33">
+                Upload image
               </label>
               <input
                 accept=".png,.jpg,.jpeg,.jfif"
-                // onChange={fileHandler}
                 id="files"
                 style={{ visibility: "hidden" }}
                 type="file"
@@ -29,11 +62,9 @@ export default function Buy() {
           </div>
         </div>
         <div className={styles.formmm}>
-          <Categories  />
           <h1>Buy Request</h1>
           <form
-            // ref={formRef}
-            // onSubmit={(e) => handleJob(e)}
+            onSubmit={handleSubmit}
             style={{
               display: "flex",
               gap: "20px",
@@ -44,51 +75,35 @@ export default function Buy() {
           >
             <TextField
               className={styles.input}
-              id="standard-helperText"
-              label="User Name"
-              // value={name}
+              id="title"
+              label="Title"
               variant="standard"
-              name="title"
-              // onChange={(e) => setName(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               required
             />
 
             <TextField
               className={styles.input}
-              id="standard-helperText"
-              label="Email"
-              // value={email}
+              id="description"
+              label="Description"
               variant="standard"
-              required
-            />
-            <TextField
-              className={styles.input}
-              id="standard-helperText"
-              label="AGE"
-              // value={licenseNumber}
-              variant="outlined"
-              name="License"
-              type="number"
-              // onChange={(e) => setLicenseNumber(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               required
             />
 
-            <TextField
-              className={styles.input}
-              id="standard-helperText"
-              label="Phone Number"
-              // value={panNumber}
-              variant="outlined"
-              name="title"
-              type="number"
-              // onChange={(e) => setPanNumber(e.target.value)}
-              required
+            <h4>Select Category</h4>
+            <Categories
+              selectedCategory={category}
+              onCategoryChange={(category) => setCategory(category)}
             />
+
+            <button type="submit">Create Item</button>
           </form>
         </div>
       </div>
       <div className={styles.footer}>
-        <button type="submit">Update</button>
         {/* {users.authorized === 0 && <button onClick={handleApproval}>Request Approval</button>} */}
       </div>
     </div>

@@ -10,3 +10,8 @@ from accessing the resources (API endpoints) on the backend.
 Enabling CORS in your backend application allows the browser to make cross-origin requests to your API. It adds the necessary HTTP headers to the server's responses,
 indicating which origins are allowed to access the server's resources. By using the cors middleware in Express.js, you can easily configure your server to handle CORS
 and allow requests from specified origins.
+
+Config:
+The npm config command is used to manage the configuration settings of the npm (Node Package Manager) client.
+ It allows you to view, set, and delete various configuration options related to how npm behaves. 
+ These configuration settings can include registry URLs, proxy settings, authentication tokens, package installation directories, and many others.

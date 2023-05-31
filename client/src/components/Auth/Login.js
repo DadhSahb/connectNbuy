@@ -34,7 +34,9 @@ export default function Login() {
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        toast.error(error.response.data.error);
+        toast.error("Invalid Request");
+      } else if (error.response && error.response.status === 404) {
+        toast.error("User not Found!");
       } else {
         toast.error("Invalid Credentials");
       }
@@ -88,8 +90,8 @@ export default function Login() {
       <Button variant="outlined" type="submit">
         Submit
       </Button>
-      <Link to="/login" underline="hover">
-        {"Already have an Account?"}
+      <Link to="/signup" underline="hover">
+        {"Dont have an account?"}
       </Link>
       <ToastContainer />
     </Box>
