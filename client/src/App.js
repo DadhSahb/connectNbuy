@@ -56,15 +56,7 @@ function App() {
                 <Buyedit />
               </Navbar>
             }
-          />{" "}
-          {/* <Route
-              path="/Buy"
-              element={
-                <Navbar>
-                  <Purchase />
-                </Navbar>
-              }
-            /> */}
+          />
           <Route
             path="Profile"
             element={

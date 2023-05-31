@@ -29,14 +29,15 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-UserSchema.methods.generateAuthToken = ()  => {
-    const token = jwt.sign(
-        {id:this.id,name: this.name, role:this.role},
-        config.get(jwtPrivateKey),
-        {expiresIn:3600000}
-    )
-    return token;
-}
+UserSchema.methods.generateAuthToken = function () {
+  const token = jwt.sign(
+    { id: this.id, name: this.name, role: this.role },
+    config.get("jwtPrivateKey"),
+    { expiresIn: 3600000 }
+  );
+  return token;
+};
+
 const User = mongoose.model("User", UserSchema);
 
 exports.User = User;
